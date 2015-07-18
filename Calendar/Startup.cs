@@ -1,7 +1,8 @@
-﻿using Microsoft.Owin;
+﻿using Calendar;
+using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartupAttribute(typeof(Calendar.Startup))]
+[assembly: OwinStartup(typeof(Startup))]
 namespace Calendar
 {
     public partial class Startup
