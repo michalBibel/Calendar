@@ -1,46 +1,47 @@
 ﻿using System.Web.Mvc;
 using Calendar.Controllers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
+using Assert = Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
 
 namespace Calendar.Tests.Controllers
 {
-    [TestClass]
+    [TestFixture]
     public class HomeControllerTest
     {
-        [TestMethod]
+        private HomeController _controller;
+
+        [SetUp]
+        public void Setup()
+        {
+            _controller = new HomeController();
+        }
+
+        [Test]
         public void Index()
         {
-            // Arrange
-            HomeController controller = new HomeController();
-
             // Act
-            ViewResult result = controller.Index() as ViewResult;
+            var result = _controller.Index() as ViewResult;
 
             // Assert
             Assert.IsNotNull(result);
         }
 
-        [TestMethod]
+        [Test]
         public void About()
         {
-            // Arrange
-            HomeController controller = new HomeController();
-
             // Act
-            ViewResult result = controller.About() as ViewResult;
+            var result = _controller.About() as ViewResult;
 
             // Assert
             Assert.AreEqual("Your application description page.", result.ViewBag.Message);
         }
 
-        [TestMethod]
+        [Test]
         public void Contact()
         {
-            // Arrange
-            HomeController controller = new HomeController();
-
             // Act
-            ViewResult result = controller.Contact() as ViewResult;
+            ViewResult result = _controller.Contact() as ViewResult;
 
             // Assert
             Assert.IsNotNull(result);

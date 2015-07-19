@@ -22,5 +22,12 @@ namespace Calendar.Controllers
 
             return View();
         }
+
+        public ActionResult Calendar()
+        {
+            ViewBag.Message = "Your calendar.";
+
+            return View();
+        }
     }
 }
