@@ -1,5 +1,6 @@
 ﻿using System;
 using Calendar.Models;
+using Calendar.Models.Identity;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
